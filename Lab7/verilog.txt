@@ -1,8 +1,8 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company:			UTEP College of Engineering, 
-//					Department of Electrical and Computer Engineering, 
-//					EE2169 - Digital Design	2018
+// Company:		UTEP College of Engineering, 
+//			Department of Electrical and Computer Engineering, 
+//			EE2169 - Digital Design	2018
 // 
 // Created By:		Bryan Ramos
 // Create Date:    	October 16th, 2018

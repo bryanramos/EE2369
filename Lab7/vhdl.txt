@@ -1,0 +1,34 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
+entity Lab7 is
+    Port ( A : in  STD_LOGIC;
+           B : in  STD_LOGIC;
+           C : in  STD_LOGIC;
+           D : in  STD_LOGIC;
+           F : out  STD_LOGIC;
+           G : out  STD_LOGIC;
+           Y : out  STD_LOGIC;
+           Z : out  STD_LOGIC);
+end Example;
+
+architecture Behavioral of Example is
+
+begin
+	process(A,B,C,D) begin
+        	F <= C or B or (not A and D) or (A and not D);
+	end process;
+
+	process(A,B,C,D) begin
+        	G <= (C and D) or (B and not D) or (A and D) or (not A and not C and not D);
+	end process;
+
+	process (B,C,D) begin
+        	Y <= (not C and not D) or (B and D);
+	end process; 
+
+	process (A,B,C,D) begin
+		Z <= A or (not B and not D) or (B and C)
+   	end process;
+
+end Behavioral;

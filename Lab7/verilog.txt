@@ -1,0 +1,34 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company:			UTEP College of Engineering, 
+//					Department of Electrical and Computer Engineering, 
+//					EE2169 - Digital Design	2018
+// 
+// Created By:		Bryan Ramos
+// Create Date:    	October 16th, 2018
+// Design Name: 	Braille Printer
+// Module Name:    	Lab 7 
+// Project Name:   	EE2369
+// Target Devices:	Spartan 3E xc3s250e-5ft256
+//
+//////////////////////////////////////////////////////////////////////////////////
+module Lab7(A,B,C,D,F,G,Y,Z);    
+	input A,B,C,D;
+	output F,G,Y,Z;
+	 
+	always @(A,B,C,D) begin // output for F
+		F = C | B | (~A & D) | (A & ~D);
+        end 
+
+        always @(A,B,C,D) begin // output for G
+        	G = (C & D) | (B & ~D) | (A & D) | (~A & ~C & ~D);
+        end
+
+        always @(B,C,D) begin // output for Y
+		Y = (~C & ~D) | (B & D);
+        end
+
+        always @(A,B,C,D) begin // output for Z
+        	Z = A | (~B & ~D) | (B & C);
+        end 
+endmodule
